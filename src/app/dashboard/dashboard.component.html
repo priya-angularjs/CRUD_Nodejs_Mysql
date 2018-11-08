@@ -1,0 +1,76 @@
+<mat-card>
+  <div class="row">
+    <div class="col-md-3">
+      <!-- <p-carousel [value]="items" numVisible="1" circular="circular" autoplayInterval="3000">
+         <ng-template let-item pTemplate="item">
+         <mat-card class="gradientCard">
+           <h2 class="gradientText">Employees</h2>
+           <p  class="gradientText">{{item.data}}</p>
+           <div class="text-center">
+             <button mat-fab color="primary"><mat-icon>call_split</mat-icon></button>
+           </div>
+         </mat-card></ng-template>
+       </p-carousel>-->
+      <mat-card class="gradientCard">
+        <h2 class="gradientText">Employees</h2>
+        <p  class="gradientText">24</p>
+        <div class="text-center">
+          <button mat-fab color="primary"><mat-icon>home</mat-icon></button>
+        </div>
+      </mat-card>
+    </div>
+    <div class="col-md-3">
+      <mat-card class="gradientCard">
+        <h2 class="gradientText">Branches</h2>
+        <p  class="gradientText">24</p>
+        <div class="text-center">
+          <button mat-fab color="primary"><mat-icon>call_split</mat-icon></button>
+        </div>
+      </mat-card>
+    </div>
+    <div class="col-md-3">
+      <mat-card class="gradientCard">
+        <h2 class="gradientText">Departments</h2>
+        <p  class="gradientText">24</p>
+        <div class="text-center">
+          <button mat-fab color="primary"><mat-icon>domain</mat-icon></button>
+        </div>
+      </mat-card>
+    </div>
+    <div class="col-md-3">
+      <mat-card class="gradientCard">
+        <h2 class="gradientText">Designations</h2>
+        <p  class="gradientText">24</p>
+        <div class="text-center">
+          <button mat-fab color="primary"><mat-icon>assignment_ind</mat-icon></button>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <mat-card class="gradientCard">
+        <h2 class="gradientText">Employees Performance</h2>
+        <canvas baseChart
+                [datasets]="lineChartData"
+                [labels]="lineChartLabels"
+                [options]="lineChartOptions"
+                [colors]="lineChartColors"
+                [legend]="lineChartLegend"
+                [chartType]="lineChartType"></canvas>
+      </mat-card>
+    </div>
+    <div class="col-md-6">
+      <mat-card class="gradientCard">
+        <h2 class="gradientText">Branches</h2>
+        <canvas baseChart
+                [datasets]="barChartData"
+                [labels]="barChartLabels"
+                [options]="barChartOptions"
+                [colors]="barChartColors"
+                [legend]="barChartLegend"
+                [chartType]="barChartType"></canvas>
+      </mat-card>
+    </div>
+  </div>
+</mat-card>

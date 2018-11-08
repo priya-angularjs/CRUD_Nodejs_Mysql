@@ -1,0 +1,34 @@
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+  <mat-toolbar color="primary" class="example-toolbar">
+    <h4 class="example-app-name">Angular App</h4>
+    <button mat-icon-button class="toggleBtn" (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+    <!-- <mat-icon class="rightBadge">notifications_none</mat-icon><span class="w3-badge w3-green">6</span>-->
+    <button mat-icon-button class="material-icons mdl-badge mdl-badge--overlap badge-color" data-badge="1">account_box</button>
+    <button mat-icon-button class="material-icons" routerLink="/"><i class="fa fa-sign-out"></i> </button>
+    <!-- <mat-menu #menu="matMenu">
+       <mat-grid-list cols="4" rowHeight="100px">
+         <mat-grid-tile
+           *ngFor="let tile of tiles"
+           [colspan]="tile.cols"
+           [rowspan]="tile.rows"
+           [style.background]="tile.color">
+           {{tile.text}}
+         </mat-grid-tile>
+       </mat-grid-list>
+   </mat-menu>-->
+  </mat-toolbar>
+
+  <mat-sidenav-container class="example-sidenav-container"
+                         [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav class="sideNavWidth" #snav [mode]="mobileQuery.matches ? 'over' : 'side'" opened="true"
+                 [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+      <app-menus></app-menus>
+    </mat-sidenav>
+    <mat-sidenav-content class="contentWidth">
+    <!--  <app-breadcrumb></app-breadcrumb>-->
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+
+

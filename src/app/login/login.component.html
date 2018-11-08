@@ -1,0 +1,63 @@
+<particles [style]="myStyle" [width]="width" [height]="height" [params]="myParams "></particles>
+<!-- Application header ends -->
+<form [formGroup]="loginForm">
+  <mat-grid-list cols="3">
+    <mat-grid-tile></mat-grid-tile>
+
+    <!-- Writing markup for login starts -->
+    <mat-grid-tile class='login-element'>
+      <div class="login-container">
+
+        <!-- Template Header starts -->
+        <div class="login-box-header">
+          <div>Welcome !</div>
+        </div>
+        <!-- Template Header ends -->
+
+        <!-- Template Body starts -->
+        <div class="login-box-body">
+
+          <!-- Markup for getting Username starts -->
+          <mat-grid-list cols="9" rowHeight="75px">
+            <mat-grid-tile [rowspan]="1" class="login-icon">
+              <mat-icon class="icon-color">lock</mat-icon>
+            </mat-grid-tile>
+            <mat-grid-tile [colspan]="7">
+              <mat-form-field class="justifier">
+                <input matInput placeholder="Username" type="text" formControlName="name" pattern="[a-zA-Z]*" required>
+                <mat-error>Invalid Name</mat-error>
+              </mat-form-field>
+            </mat-grid-tile>
+          </mat-grid-list>
+          <!-- Markup for getting Username ends -->
+
+          <!-- Markup for getting Password starts -->
+          <mat-grid-list cols="9" rowHeight="100px">
+            <mat-grid-tile [rowspan]="1"  class="login-icon">
+              <mat-icon class="icon-color">remove_red_eye</mat-icon>
+            </mat-grid-tile>
+            <mat-grid-tile [colspan]="7">
+             <mat-form-field class="justifier">
+                <input matInput placeholder="Password" type="password" formControlName="password"  required >
+                <mat-error></mat-error>
+             </mat-form-field>
+            </mat-grid-tile>
+          </mat-grid-list>
+          <!-- Markup for getting Password ends -->
+
+          <button mat-raised-button class="login-button" (click)="login(loginForm)" [disabled]="!loginForm.valid">
+            <mat-icon>input</mat-icon> Login
+          </button>
+
+        </div>
+        <!-- Template Body ends -->
+
+      </div>
+    </mat-grid-tile>
+    <!-- Writing markup for login ends -->
+    <mat-grid-tile></mat-grid-tile>
+
+  </mat-grid-list></form>
+
+
+

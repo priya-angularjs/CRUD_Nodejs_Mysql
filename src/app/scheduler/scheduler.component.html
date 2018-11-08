@@ -1,0 +1,19 @@
+
+<div class="col-md-3">
+
+  <mat-card class="card-length">
+    <mat-toolbar class="event-title">Event Location</mat-toolbar>
+    <div class="dropdown-length">
+      <p-dropdown [options]="locations"  placeholder="Select a City" optionLabel="label" (onChange)="locationEvent($event)" [style]="{'width':'245px'}"></p-dropdown>
+    </div>
+  </mat-card>
+</div>
+<div class="col-md-9">
+  <button mat-fab color="primary" (click)="getEvent()"><i class="fa fa-refresh"></i></button>
+  <mat-card class="calendar-design">
+    <p-fullCalendar [events]="calendarArray" [options]="header"></p-fullCalendar>
+    <!--<p-schedule [events]="calendarData" [header]="header" [eventLimit]="4" [droppable]="true" [editable]="true" dragOpacity=0.50  [style.background-color]="color"
+                (onDayClick)="dayClickEvent($event)">
+    </p-schedule>-->
+  </mat-card></div>
+

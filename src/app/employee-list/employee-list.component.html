@@ -1,0 +1,184 @@
+<meta name="viewport" content="width=device-width" />
+<mat-card class="cardList-design">
+  <form class="example-container">
+    <div class="row">
+      <mat-card class="employeeCard">Employee List</mat-card>
+      <br>
+      <div class="example-container mat-elevation-z8">
+        <!--   <mat-table #table [dataSource]="dataSource">
+
+             &lt;!&ndash; Position Column &ndash;&gt;
+             <ng-container matColumnDef="id">
+               <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+               <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+             </ng-container>
+
+             &lt;!&ndash; Name Column &ndash;&gt;
+             <ng-container matColumnDef="name">
+               <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+               <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+             </ng-container>
+
+             &lt;!&ndash; Weight Column &ndash;&gt;
+             <ng-container matColumnDef="mobile_no">
+               <mat-header-cell *matHeaderCellDef> Mobile No </mat-header-cell>
+               <mat-cell *matCellDef="let element"> {{element.mobile_no}} </mat-cell>
+             </ng-container>
+
+             &lt;!&ndash; Symbol Column &ndash;&gt;
+             <ng-container matColumnDef="department">
+               <mat-header-cell *matHeaderCellDef> Department </mat-header-cell>
+               <mat-cell *matCellDef="let element"> {{element.department}} </mat-cell>
+             </ng-container>
+             <ng-container matColumnDef="designation">
+               <mat-header-cell *matHeaderCellDef> Designation </mat-header-cell>
+               <mat-cell *matCellDef="let element"> {{element.designation}} </mat-cell>
+             </ng-container>
+             <ng-container matColumnDef="branch">
+               <mat-header-cell *matHeaderCellDef> Branch </mat-header-cell>
+               <mat-cell *matCellDef="let element"> {{element.branch}} </mat-cell>
+             </ng-container>
+
+             <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+             <mat-row *matRowDef="let row; columns: displayedColumns;"  [ngClass]="{'highlight': selectedRowIndex == row.id}" (click)="highlight(row)"></mat-row>
+           </mat-table>
+               <mat-paginator #paginator [length]="length"
+                          [pageSize]="pageSize"
+                          [pageSizeOptions]="pageSizeOptions"
+                          (page)="pageEvent = getServerData($event)">
+           </mat-paginator>
+           -->
+
+        <p-dataTable [value]="employeeList" [loading]="loading" selectionMode="single" [(selection)]="selectedEmployee" (onRowSelect)="onRowSelect($event)" [paginator]="true" [rows]="15" [responsive]="true">
+          <p-header>Employee List</p-header>
+          <p-column field="id" header="Id"></p-column>
+          <p-column field="name" header="Name"></p-column>
+          <p-column field="mobile_no" header="Mobile No"></p-column>
+          <p-column field="department" header="Department"></p-column>
+          <p-column field="designation" header="Designation"></p-column>
+          <p-column field="id_proof" header="Id Proof"></p-column>
+          <p-column field="branch" header="Branch"></p-column>
+        </p-dataTable>
+      </div>
+
+    </div>
+  </form>
+  <mat-card-actions> </mat-card-actions>
+</mat-card>
+
+<p-dialog header="Employee List" [(visible)]="display" [width]="1000">
+  <mat-card class="card-design">
+    <form class="example-container" [formGroup]="employeeListForm">
+      <div class="row">
+        <mat-card class="employeeCard">Add Employee</mat-card>
+        <br>
+        <div class="col-md-1"></div>
+        <div class="col-md-6">
+          <div *ngIf = false>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Employee Name" type="text" formControlName="id">
+              <mat-icon matSuffix class="icon-color">home</mat-icon>
+            </mat-form-field></div>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Employee Name" type="text" formControlName="name">
+            <mat-icon matSuffix class="icon-color">home</mat-icon>
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Mobile Number" formControlName="mobileNo" required pattern="[6789]\d{9}" maxlength="10">
+            <mat-icon matSuffix class="icon-color">phone_iphone</mat-icon>
+            <mat-error> Invalid MobileNo</mat-error>
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="DOB"  [matDatepicker]="picker"  formControlName="birthDate" readonly>
+            <mat-datepicker-toggle matSuffix [for]="picker" class="icon-size">
+              <mat-icon matDatepickerToggleIcon class="icon-color">date_range</mat-icon>
+            </mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="ID proof" formControlName="idProof">
+            <mat-icon matSuffix class="icon-color">chrome_reader_mode</mat-icon>
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Address" formControlName="address">
+            <mat-icon matSuffix class="icon-color">portrait</mat-icon>
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Landmark" formControlName="landmark">
+            <mat-icon matSuffix class="icon-color">golf_course</mat-icon>
+          </mat-form-field>
+
+          <!-- <mat-form-field class="example-full-width">-->
+          <mat-autocomplete>
+            <mat-option *ngFor="let option of states" [value]="option">
+              {{ option }}
+            </mat-option>
+            <mat-icon matSuffix class="icon-color">person_pin_circle</mat-icon>
+
+          </mat-autocomplete>
+
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="State" aria-label="State" [matAutocomplete]="auto" formControlName="state">
+            <mat-icon matSuffix class="icon-color">person_pin_circle</mat-icon>
+            <mat-autocomplete #auto="matAutocomplete" (optionSelected)="onSelectionChanged($event)">
+              <mat-option *ngFor="let state of states" [value]="state">
+                <span>{{ state }}</span>
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+          <!--
+
+        </mat-form-field>-->
+        </div>
+        <div class="col-md-5">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="District" formControlName="district" [matAutocomplete]="dt" [readonly]="isDistrict">
+            <mat-icon matSuffix class="icon-color">person_pin_circle</mat-icon>
+            <mat-autocomplete #dt="matAutocomplete" (optionSelected)="selectDistrict($event)">
+              <mat-option *ngFor="let district of districts" [value]="district">
+                <span>{{ district }}</span>
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Taluk" formControlName="taluk" [matAutocomplete]="tk" [readonly]="isTaluk">
+            <mat-icon matSuffix class="icon-color">person_pin_circle</mat-icon>
+            <mat-autocomplete #tk="matAutocomplete">
+              <mat-option *ngFor="let taluk of taluks" [value]="taluk">
+                <span>{{ taluk }}</span>
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Pincode" formControlName="pincode" required pattern="[0-9]{6}" maxlength="6">
+            <mat-icon matSuffix class="icon-color">plus_one</mat-icon>
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Department" formControlName="department" required >
+            <mat-icon matSuffix class="icon-color">domain</mat-icon>
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Designation" formControlName="designation" required>
+            <mat-icon matSuffix class="icon-color">assignment_ind</mat-icon>
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Branch" formControlName="branch" required>
+            <mat-icon matSuffix class="icon-color">call_split</mat-icon>
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Joined Date"  [matDatepicker]="jd" disabled  formControlName="joinedDate" readonly required>
+            <mat-datepicker-toggle matSuffix [for]="jd" class="icon-size">
+              <mat-icon matDatepickerToggleIcon class="icon-color">date_range</mat-icon>
+            </mat-datepicker-toggle>
+            <mat-datepicker #jd disabled="false"></mat-datepicker>
+          </mat-form-field>
+        </div>
+      </div>
+    </form>
+    <mat-card-actions>
+      <button mat-button (click)="close()">close</button>
+      <button mat-button  (click)="deleteEmployee()">Delete</button>
+      <button mat-button  (click)="updateEmployee(employeeListForm)">Update</button>
+    </mat-card-actions>
+  </mat-card>
+</p-dialog>

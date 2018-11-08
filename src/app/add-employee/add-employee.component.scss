@@ -1,0 +1,178 @@
+.main {
+  margin-left: 220px; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+/* DashboardComponent's private CSS styles */
+[class*='col-'] {
+  float: left;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+[class*='col-']:last-of-type {
+  padding-right: 0;
+}
+a {
+  text-decoration: none;
+}
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+h3 {
+  text-align: center; margin-bottom: 0;
+}
+h4 {
+  position: relative;
+}
+.grid {
+  margin: 0;
+}
+.col-1-4 {
+  width: 25%;
+}
+.module {
+  padding: 45px;
+  text-align: center;
+  color: #eee;
+  max-height: 120px;
+  min-width: 120px;
+  background-color: #607D8B;
+  border-radius: 2px;
+}
+.module:hover {
+  background-color: #EEE;
+  cursor: pointer;
+  color: #607d8b;
+}
+.grid-pad {
+  padding: 10px 0;
+}
+.grid-pad > [class*='col-']:last-of-type {
+  padding-right: 20px;
+}
+@media (max-width: 600px) {
+  .module {
+    font-size: 10px;
+    max-height: 75px; }
+}
+@media (max-width: 1024px) {
+  .grid {
+    margin: 0;
+  }
+  .module {
+    min-width: 60px;
+  }
+}
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+.example-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.example-container > * {
+  width: 100%;
+}
+.mat-input-element {
+  caret-color: #298495;
+}
+mat-input-container label {
+  color: red;
+}
+
+
+.submitBtn{
+  color: #ffffff;
+  background: linear-gradient(to bottom, #40a2b4 51%, #ebedf0 100%);
+}
+mat-input-container:not(.mat-input-invalid).mat-input-focused .mat-input {
+  border-color: red;
+}
+.employeeCard{
+  height: 70px;
+  padding: 20px;
+  background: linear-gradient(to bottom, #40a2b4 51%, #ebedf0 100%);
+  color: white;
+  font-size: 20px;
+}
+.example-is-mobile .example-toolbar {
+  position: fixed;
+  /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+  z-index: 2;
+}
+
+h1.example-app-name {
+  margin-left: 8px;
+}
+.example-is-mobile .example-sidenav-container {
+  flex: 1 0 auto;
+}
+.sideNavWidth{
+
+  width:200px;
+}
+.mat-toolbar.mat-primary {
+  background: #298495;
+  color: #fff;
+}
+.sidenav-content{
+  margin-left: 230px;
+  margin-right: 0px;
+}
+.toggleBtn {
+  padding: 0;
+  min-width: 0;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  line-height: 40px;
+  border-radius: 50%;
+  margin: 20px;
+}
+.menuBtn {
+  padding: 0;
+  min-width: 0;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  line-height: 40px;
+  border-radius: 50%;
+  margin: 60px;
+}
+.card-design{
+  background-color: rgba(221, 221, 221, 0.34);
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 50px;
+}
+.icon-color{
+  color: #298495;
+}
+.icon-size{
+  font-size: 150%;
+  margin-right: -5px;
+}
+.iconBtn {
+  padding: 0;
+  min-width: 0;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  line-height: 40px;
+  border-radius: 50%;
+  margin-left: 1600px;
+}
+
+
+
+
+

@@ -1,0 +1,170 @@
+.example-is-mobile .example-sidenav-container {
+  flex: 1 0 auto;
+}
+.sideNavWidth{
+  width: 200px;
+}
+.mat-toolbar.mat-primary{
+  background: linear-gradient(to bottom, #40a2b4 51%, #ebedf0 100%);
+  color: #fff;
+}
+.sidenav-content{
+  margin-left: 230px;
+  margin-right: 0px;
+}
+.toggleBtn {
+  padding: 0;
+  min-width: 0;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  line-height: 40px;
+  border-radius: 50%;
+  margin: 20px;
+}
+.menuBtn {
+  padding: 0;
+  min-width: 0;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  line-height: 40px;
+  border-radius: 50%;
+  margin: 60px;
+}
+
+
+@media (max-width: 600px) {
+  .module {
+    font-size: 10px;
+    max-height: 75px; }
+}
+@media (max-width: 1024px) {
+  .grid {
+    margin: 0;
+  }
+  .module {
+    min-width: 60px;
+  }
+}
+.example-header{
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+  margin-left: 1600px;
+}
+/*
+ * Import required theme for Material2
+ */
+.all-wrap {
+  min-height: 100vh;
+}
+.page-wrap {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.content {
+  flex: 1;
+}
+main {
+  display: flex;
+  flex-direction: column;
+}
+main > *:not(router-outlet) {
+  flex: 1;
+  display: block;
+}
+.iconBtn {
+  padding: 0;
+  min-width: 0;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  line-height: 40px;
+  border-radius: 50%;
+  margin-left: 1600px;
+}
+.icon-color{
+  color: #298495;
+}
+.contentWidth{
+  margin-left: 200px;
+  margin-right: 0px;
+  margin-bottom: 100px;
+}
+.mat-drawer {
+  background-color: #fafafa;
+  color: rgba(0, 0, 0, 0.87);
+}
+.w3-badge,.w3-tag{
+  background-color: #000;
+  color: #fff;
+  display: inline-block;
+  padding-left: 8px;
+  padding-right: 8px;
+  text-align: center;
+  margin-bottom: 30px;
+  border-radius: 25px;
+  font-size: 15px;
+}
+.w3-green,.w3-hover-green:hover{
+  color: #298495!important;
+  background-color: #ffffff!important;
+}
+.rightBadge{
+  text-align: right;
+}
+.mdl-badge[data-badge]:after {
+  content: attr(data-badge);
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-pack: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -ms-flex-align: center;
+  -webkit-box-align: center;
+  align-items: center;
+  position: absolute;
+  top: -11px;
+  right: -14px;
+  font-family: "Roboto","Helvetica","Arial",sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #298495;
+  color: #fff;
+}
+.badge-color{
+  margin-left: 80%;
+}
+@media (max-width: 768px){
+  .badge-color{
+    margin-left:30%;
+  }
+}
+@media (max-width: 1024px){
+  .badge-color{
+    margin-left:20%;
+  }
+}
+@media (max-width: 320px){
+  .badge-color{
+    margin-left: 10%;
+  }
+}
+@media (max-width: 375px){
+  .badge-color{
+    margin-left: 15%;
+  }
+}
