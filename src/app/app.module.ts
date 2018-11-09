@@ -10,7 +10,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatMenuModule, MatListModule, MatIconModule, MatTableModule, MatPaginatorModule, MatNativeDateModule, MatDatepickerModule,
-  MatGridListModule, MatAutocompleteModule, MatDividerModule, MatDialogModule} from '@angular/material';
+  MatGridListModule, MatAutocompleteModule, MatDividerModule, MatDialogModule, MatBadgeModule} from '@angular/material';
 import {MatSelectModule} from '@angular/material/select';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -20,6 +20,7 @@ import {SlideMenuModule} from 'primeng/slidemenu';
 import {CarouselModule} from 'primeng/carousel';
 import {DropdownModule} from 'primeng/primeng';
 import {FullCalendarModule} from 'primeng/fullcalendar';
+
 import 'moment';
 // import 'fullcalendar';
 import 'jquery';
@@ -63,7 +64,7 @@ import {ParticlesModule} from 'angular-particle';
     MatInputModule, MatFormFieldModule, MatIconModule, MatButtonModule, MatGridListModule,
     MatTableModule, MatSidenavModule, MatToolbarModule, MatDatepickerModule, MatCardModule,
     MatMenuModule, MatSelectModule, MatAutocompleteModule,  MatDividerModule, MatDialogModule,
-    MatPaginatorModule, MatNativeDateModule, MatListModule,
+    MatPaginatorModule, MatNativeDateModule, MatListModule, MatBadgeModule,
     ChartsModule,
     DialogModule,
     SlideMenuModule,

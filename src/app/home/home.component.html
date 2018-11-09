@@ -2,9 +2,9 @@
   <mat-toolbar color="primary" class="example-toolbar">
     <h4 class="example-app-name">Angular App</h4>
     <button mat-icon-button class="toggleBtn" (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
-    <!-- <mat-icon class="rightBadge">notifications_none</mat-icon><span class="w3-badge w3-green">6</span>-->
-    <button mat-icon-button class="material-icons mdl-badge mdl-badge--overlap badge-color" data-badge="1">account_box</button>
-    <button mat-icon-button class="material-icons" routerLink="/"><i class="fa fa-sign-out"></i> </button>
+    <mat-icon matBadge="15" matBadgeColor="warn" style="margin-left: 85%;">account_box</mat-icon>
+    <button mat-icon-button routerLink="/" ><mat-icon><i class="fa fa-sign-out"  style="margin-left: 10%;"></i></mat-icon> </button>
+
     <!-- <mat-menu #menu="matMenu">
        <mat-grid-list cols="4" rowHeight="100px">
          <mat-grid-tile
